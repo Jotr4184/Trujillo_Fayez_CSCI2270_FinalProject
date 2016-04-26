@@ -1,0 +1,12 @@
+build network
+insert city
+delete city 
+print path
+add landmarks
+set budget 
+gas
+cancle trip
+start
+go to next city
+go to previous
+return home
