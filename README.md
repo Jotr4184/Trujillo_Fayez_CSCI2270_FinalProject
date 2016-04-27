@@ -18,4 +18,4 @@ Contributors:
 Notes provided on moodle by Rhonda Hoenigman were used as references and what not.
 
 Open issues/bugs:
-To our knowledge there do not appear to be any bugs but we do welcome greater testing to flesh out any possible bugs that we did not catch.
+To our knowledge there do not appear to be any bugs but we do welcome greater testing to flesh out any possible bugs that we did not catch. Also any interesting ideas that could be added to make our project better are also welcomed!
