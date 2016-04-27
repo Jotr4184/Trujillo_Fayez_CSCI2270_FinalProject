@@ -1,26 +1,28 @@
-#ifndef TRAVEL_H
-#define TRAVEL_H
+#ifndef TRAVEL_H_INCLUDED
+#define TRAVEL_H_INCLUDED
+#include <iostream>
+#include <vector>
 
-struct City
-{
+struct City{
     std::string cityName;
     std::string souvenirName;
     int souvenirPrice;
-    std::string HotSpot;
+    std::string hotSpot;
     City *next;
     City *previous;
 
-    City(){};
+    City(){}; // default constructor
 
-    City(std::string initcityName,std::string initsouvenirName,int initsouvenirprice,std::string initHotSpot, City *initnext, City *initprev)
+    City(std::string initName, City *initNext, City *initPrevious, std::string initSouvenirName, int initSouvenirPrice, std::string initHotSpot)
     {
-        cityname=initcityName;
-        souvenirName=initsouvenirName;
-        souvenirPrice=initsouvenirprice;
-        HotSpot=initHotSpot;
-        next=initnext;
-        previous=initprev;
+        cityName = initName;
+        next = initNext;
+        previous = initPrevious;
+        souvenirName = initSouvenirName;
+        souvenirPrice = initSouvenirPrice;
+        hotSpot = initHotSpot;
     }
+
 };
 
 class Travel
@@ -28,20 +30,26 @@ class Travel
     public:
         Travel();
         ~Travel();
+        void addCity(std::string, std::string, std::string, int, std::string);
         void planTrip();
-        void addCity(std::string city, std::string cityPrv);
-        void deleteCity(std::string city);
-        void cancelTrip();
         void printTrip();
-        void addHotSpot(std::string place);
-        void addSouvenir(std::string thing,int price);
-        int setBudget(int money);
-        void startTrip();
-        void nextCity();
-        void prevCity();
+        void printNetwork();
+        void deleteCity(std::string);
+        void cancelTrip();
+        void setBudget(int);
+        City *startTrip(City *start);
+        int buySouvenir(City *currentCity, int);
+        int returnBudget();
+        void printSouvenirs();
+
     protected:
     private:
-        int budget;
+        City *head;
+        City *tail;
+        int budget=0;
+        bool budgetCheck;
+        std::vector<std::string> souvenirsPurhcased;
 };
 
-#endif // TRAVEL_H
+
+#endif // TRAVEL_H_INCLUDED
