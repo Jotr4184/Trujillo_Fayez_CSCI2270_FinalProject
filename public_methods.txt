@@ -1,3 +1,5 @@
+For planning purposes (not needed to run program):
+
 build network
 insert city
 delete city 
