@@ -180,7 +180,7 @@ int main(int argc, char* argv[])
             string cityDelete;
 
             cout << "Enter a city name: " << endl;
-            cin >> cityDelete;
+            getline(cin, cityDelete); //getline used because it can accept spaces in user input.
 
             Tp.deleteCity(cityDelete);
         }
