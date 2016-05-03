@@ -156,6 +156,14 @@ void Travel::deleteCity(string cityNameIn)
             head->previous = NULL;
             delete delCity;
         }
+        else if (searchCity == tail){           //Else if the city is the tail  (tail changes added by AKNucoder)
+ +            delCity = tail;
+ +            if (tail->previous != NULL){        //If the city before the last city is not null
+ +                tail->previous->next = NULL;    //Make the previous city's next be NULL (since the last city is being deleted).
+ +            }
+ +            tail = tail->previous;              //Officially assign the previous city as the tail.
+ +            delete delCity;
+          }
         else
         {
             searchCity->previous->next = searchCity->next;
