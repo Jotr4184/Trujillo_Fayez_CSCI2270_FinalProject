@@ -68,11 +68,11 @@ int main(int argc, char* argv[])
                 cout << "You have already planned your trip!" << endl;
             }
         }
-        if(userInput == 3)      //print trip path
+        else if(userInput == 3)      //print trip path
         {
             Tp.printTrip();
         }
-        if(userInput == 4)      //set budget
+        else if(userInput == 4)      //set budget
         {
             if(budgetCheck == true)     //checking for if already set budget
             {
@@ -84,7 +84,7 @@ int main(int argc, char* argv[])
                 cout << "Please set a budget for your trip! (Between $100 - $300)" << endl;
                 cin >> setBudget;
 
-                while(setBudget < 100 || setBudget > 300)       //has to be between 100 and 300 $$$
+                if(setBudget < 100 || setBudget > 300)       //has to be between 100 and 300 $$$
                 {
                     cout << "Please set a budget as low as $100 and as high as $300." << endl;
                     cin >> setBudget;
@@ -94,7 +94,7 @@ int main(int argc, char* argv[])
                 budgetCheck = true;
             }
         }
-        if(userInput == 5)      //start trip
+        else if(userInput == 5)      //start trip
         {
             if(budgetCheck != true)     //have to set budget before starting trip check
             {
@@ -112,7 +112,7 @@ int main(int argc, char* argv[])
                 }
             }
         }
-        if(userInput == 6)      //Travel to next city
+        else if(userInput == 6)      //Travel to next city
         {
             if(start!= NULL)     //as long as the start pointer we made at the beginning isn't NULL, it can proceed
             {
@@ -130,7 +130,7 @@ int main(int argc, char* argv[])
                 cout << "You have to start your trip before going to the next city."<< endl;
             }
         }
-        if(userInput == 7)      //Travel back to previous city
+        else if(userInput == 7)      //Travel back to previous city
         {
             if(start!=NULL)
             {
@@ -148,7 +148,7 @@ int main(int argc, char* argv[])
                 cout<<"You have to start your trip before going to the previous city."<<endl;
             }
         }
-        if(userInput == 8)      //Add a city to their trip
+        else if(userInput == 8)      //Add a city to their trip
         {
             string cityNew;
             string cityPrevious;
@@ -175,7 +175,7 @@ int main(int argc, char* argv[])
 
             Tp.addCity(cityPrevious, cityNew, souvenirNew, souvenirNPrice, hotSpotNew);
         }
-        if(userInput == 9)          //delete a city in trip
+        else if(userInput == 9)          //delete a city in trip
         {
             string cityDelete;
 
@@ -184,7 +184,7 @@ int main(int argc, char* argv[])
 
             Tp.deleteCity(cityDelete);
         }
-        if(userInput == 10)      //buy souvenir
+        else if(userInput == 10)      //buy souvenir
         {
             int budget = Tp.returnBudget();
             Tp.buySouvenir(start, budget);
